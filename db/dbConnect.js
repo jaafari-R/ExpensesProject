@@ -5,6 +5,11 @@ function connectToMongoDB() {
     return mongoose.connect(MONGO_DB_URL)
 }
 
+function disconnectMongoDB() {
+    return mongoose.connection.close();
+}
+
 module.exports = {
-    dbConnect: connectToMongoDB
+    dbConnect: connectToMongoDB,
+    dbDisconnect: disconnectMongoDB
 }
