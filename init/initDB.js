@@ -7,7 +7,7 @@ async function initializeDB() {
     .then(() => {
         return Expense.insertMany(expensesData);
     })
-    
+
     await dbDisconnect();
 }
 
