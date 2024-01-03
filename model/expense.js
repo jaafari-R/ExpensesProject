@@ -5,6 +5,10 @@ class ExpenseModel {
         return Expense.find().sort({date: -1});
     }
 
+    static getByGroup(group) {
+        return Expense.find({group});
+    }
+
     static createExpense(item, group, amount, date) {
         return Expense.create({item, group, amount, date});
     }
