@@ -8,6 +8,13 @@ class ExpenseModel {
     static createExpense(item, group, amount, date) {
         return Expense.create({item, group, amount, date});
     }
+
+    static updateGroup(oldGroup, newGroup) {
+        console.log(oldGroup, newGroup)
+        return Expense.findOneAndUpdate({
+            group: oldGroup
+        }, {$set: {group: newGroup}});
+    }
 }
 
 module.exports = ExpenseModel;

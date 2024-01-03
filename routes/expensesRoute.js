@@ -21,4 +21,13 @@ router.post("/", (req, res) => {
     })
 })
 
+router.patch("/update-group/", (req, res) => {
+    const {oldGroup, newGroup} = req.body;
+    ExpenseModel.updateGroup(oldGroup, newGroup)
+    .then((changeExpense) => {
+        const {item, group} = changeExpense;
+        res.send(`${item} group changed to ${group}`);
+    })
+})
+
 module.exports = router;
