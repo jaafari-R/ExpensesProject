@@ -10,7 +10,4 @@ class Helper {
     }
 }
 
-console.log(Helper.getDate("2000-01-01"))
-console.log(Helper.getDate())
-
 module.exports = Helper;
